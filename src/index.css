@@ -1,0 +1,80 @@
+@import './styles/variables.css';
+
+/* Global Resets or Utils */
+/* Global Main Padding for fixed header (skip for Home which handles its own hero) */
+main {
+  padding-top: 100px;
+}
+
+.container {
+  max-width: 1400px;
+  /* Wider container for premium expansive feel */
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--color-accent);
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(20, 158, 209, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: #118bb8;
+  border-color: #118bb8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(20, 158, 209, 0.4);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Glass Card Utility */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #fff 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme='light'] .text-gradient {
+  background: linear-gradient(135deg, #000 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

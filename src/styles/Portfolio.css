@@ -1,0 +1,809 @@
+/* src/styles/Portfolio.css */
+
+/* --- Main Structure --- */
+.portfolio-page-revamp {
+    min-height: 100vh;
+    background: #000;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* --- Hero & Selection View --- */
+.portfolio-hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 5rem;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    /* Subtle grid */
+}
+
+/* Revolving Semi-Circle (Decorative) */
+.revolving-semicircle-wrapper {
+    position: absolute;
+    top: -200px;
+    /* Adjust to sit at top */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.revolving-ring {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px dashed rgba(20, 158, 209, 0.2);
+    position: relative;
+    animation: rotateRing 60s linear infinite;
+}
+
+.orbit-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    /* Wrapper size */
+    height: 40px;
+    margin-top: -20px;
+    margin-left: -20px;
+}
+
+.orbit-thumb {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #333;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(20, 158, 209, 0.3);
+}
+
+.center-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(20, 158, 209, 0.1) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+}
+
+@keyframes rotateRing {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Selection Cards */
+.portfolio-selection {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+}
+
+.selection-header {
+    margin-bottom: 4rem;
+}
+
+.section-label {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.selection-header h1 {
+    font-size: 4rem;
+    /* Larger */
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.selection-header p {
+    color: var(--text-secondary);
+    margin-bottom: 4rem;
+    font-size: 1.1rem;
+}
+
+.selection-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 900px;
+    /* Tighter container */
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .selection-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.select-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* very subtle default */
+    border-radius: 24px;
+    /* Slightly smaller radius */
+    padding: 2.5rem;
+    /* Reduced padding */
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    height: 280px;
+    /* Reduced height (approx 50-60%) */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Content at bottom */
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.select-card:hover {
+    border-color: var(--color-accent);
+    background: rgba(20, 158, 209, 0.05);
+    /* Tinted background on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 20px rgba(20, 158, 209, 0.2);
+}
+
+.card-bg-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.02);
+    transition: all 0.5s;
+    opacity: 0.6;
+    /* Softer */
+}
+
+.select-card:hover .card-bg-icon {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: rgba(20, 158, 209, 0.05);
+}
+
+.select-content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+}
+
+.select-icon {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.select-content h2 {
+    font-size: 1.6rem;
+    /* Smaller heading */
+    margin-bottom: 0.4rem;
+}
+
+.select-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    /* Smaller text */
+    line-height: 1.4;
+}
+
+.enter-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+.select-card:hover .enter-link {
+    opacity: 1;
+    gap: 1rem;
+    color: var(--color-accent);
+}
+
+/* Light Mode Overrides */
+[data-theme='light'] .portfolio-page-revamp {
+    background: #f5f5f5;
+}
+
+[data-theme='light'] .revolving-ring {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .select-card {
+    background: #fff;
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='light'] .select-content h2 {
+    color: #000;
+}
+
+[data-theme='light'] .enter-link {
+    color: #333;
+}
+
+/* --- IT Portfolio (Horizontal 16:9) --- */
+.it-portfolio-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #050505;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.it-header {
+    position: absolute;
+    top: 7rem;
+    /* Moved down to avoid navbar overlap */
+    left: 5%;
+    z-index: 5;
+}
+
+.it-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.it-header p {
+    color: var(--text-secondary);
+}
+
+.it-carousel-wrapper {
+    width: 100%;
+    height: 70vh;
+    /* Optimal height */
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+    /* Ensure snap allows free scrolling but catches */
+    scroll-snap-type: x mandatory;
+}
+
+.it-carousel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.it-carousel {
+    display: flex;
+    gap: 10vw;
+    /* Space between cards */
+    padding: 0 20vw;
+    /* Center the card: (100vw - 60vw) / 2 = 20vw */
+    width: max-content;
+}
+
+.it-card {
+    width: 60vw;
+    /* Smaller, professional size */
+    aspect-ratio: 1898 / 913;
+    position: relative;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    /* Force stop on each card */
+    border-radius: 32px;
+    /* Smoother rounded corners */
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle border for definition */
+}
+
+.it-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.it-card:hover .it-image {
+    transform: scale(1.03);
+}
+
+/* IT Overlay - Always visible or enhanced on hover */
+.it-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    /* Ensure padding is included in height */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.2));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 4rem 4rem 6rem 4rem;
+    /* More bottom padding to lift text */
+    opacity: 1;
+}
+
+.it-text-content {
+    max-width: 70%;
+    transform: translateY(0);
+    /* Always visible for better UX */
+}
+
+.cat-tag {
+    text-transform: uppercase;
+    color: #ffffff;
+    /* Replaced var(--color-accent) for better contrast */
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.5rem;
+    display: block;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.it-card:hover .it-text-content {
+    transform: translateY(0);
+}
+
+.it-text-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.1;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 4px rgba(0, 0, 0, 0.5);
+    /* Outer shadow + inner stroke effect */
+}
+
+.it-text-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    max-width: 450px;
+    line-height: 1.6;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .it-carousel-wrapper {
+        height: 60vh;
+    }
+
+    .it-card {
+        width: 85vw;
+        /* Wider on mobile */
+        border-radius: 20px;
+    }
+
+    .it-carousel {
+        padding: 0 7.5vw;
+        /* (100 - 85) / 2 */
+        gap: 5vw;
+    }
+
+    .it-text-content {
+        max-width: 100%;
+    }
+
+    .it-text-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .it-overlay {
+        padding: 1.5rem;
+    }
+
+    .nav-arrow-btn {
+        display: none;
+        /* Hide arrows on mobile, use swipe */
+    }
+}
+
+/* --- Marketing Portfolio (Vertical Reels 9:16) --- */
+.marketing-portfolio-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 100;
+    padding-top: 80px;
+    /* Offset for header */
+}
+
+.marketing-reels {
+    height: calc(100vh - 80px);
+    /* Subtract header offset */
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.marketing-reels::-webkit-scrollbar {
+    display: none;
+}
+
+.snap-section {
+    height: calc(100vh - 80px);
+    /* Match container height */
+    width: 100%;
+    scroll-snap-align: center;
+    /* Center alignment preferred for vertical */
+    scroll-snap-stop: always;
+    /* Force stop */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0;
+    /* Remove padding to let frame use full space if needed */
+}
+
+/* The Phone Frame (9:16) */
+.reel-frame {
+    width: auto;
+    height: 80vh;
+    /* Reduced from 90vh to fit under header */
+    aspect-ratio: 9 / 16;
+    background: #111;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 20px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Content inside the frame */
+.reel-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.reel-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    /* Higher gradient for text visibility */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+}
+
+.reel-content {
+    position: relative;
+    z-index: 2;
+    padding: 3rem 2rem 4rem 2rem;
+    /* Better padding */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.reel-cat {
+    text-transform: uppercase;
+    color: #ffffff;
+    /* Replaced var(--color-accent) for better contrast */
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.5rem;
+    display: block;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.reel-content h2 {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.reel-content p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.reel-number {
+    position: absolute;
+    right: 18%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20vh;
+    font-weight: 900;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.reel-side-title {
+    position: absolute;
+    left: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 8vh;
+    font-weight: 900;
+    opacity: 0.05;
+    color: #ffffff;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 5;
+    max-width: 25vw;
+    line-height: 1.1;
+    cursor: default;
+    text-align: left;
+}
+
+.reel-side-title:hover {
+    color: var(--color-accent);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+    /* subtle scaling effect */
+}
+
+@media (max-width: 768px) {
+    .reel-frame {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        /* Full screen on mobile */
+    }
+
+    .reel-side-title {
+        display: none;
+        /* Hide left names on mobile */
+    }
+
+    .snap-section {
+        padding: 0;
+    }
+
+    .reel-content h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Back Button */
+.back-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+}
+
+[data-theme='light'] .back-btn {
+    background: rgba(0, 0, 0, 0.1);
+    color: #000;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.floating-back {
+    position: fixed;
+    /* Floats over vertical scroll */
+}
+
+/* Reusing Gradient Classes from before, extended */
+.p1 {
+    background: linear-gradient(135deg, #111, #222);
+}
+
+.p2 {
+    background: linear-gradient(135deg, #ff6b6b, #556270);
+}
+
+.p3 {
+    background: linear-gradient(135deg, #4ecdc4, #556270);
+}
+
+.p4 {
+    background: linear-gradient(135deg, #fc5c7d, #6a82fb);
+}
+
+.p5 {
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+}
+
+.p6 {
+    background: linear-gradient(135deg, #c31432, #240b36);
+}
+
+/* --- Navigation Controls (Shared) --- */
+.nav-arrow-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    backdrop-filter: blur(12px);
+    z-index: 200;
+}
+
+.nav-arrow-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.nav-arrow-btn:active {
+    transform: scale(0.95);
+}
+
+[data-theme='light'] .nav-arrow-btn {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+[data-theme='light'] .nav-arrow-btn:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+/* --- IT Portfolio Navigation --- */
+.nav-left,
+.nav-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-left:hover,
+.nav-right:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-left:active,
+.nav-right:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.nav-left {
+    left: 2rem;
+}
+
+.nav-right {
+    right: 2rem;
+}
+
+/* --- Marketing Vertical Navigation --- */
+.vertical-nav-controls {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 200;
+}
+
+.scroll-track-line {
+    width: 1px;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+[data-theme='light'] .scroll-track-line {
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3), transparent);
+}
+
+/* --- Light Mode Extensions for Portfolio Views --- */
+[data-theme='light'] .it-portfolio-container,
+[data-theme='light'] .marketing-portfolio-container {
+    background: #f5f5f5;
+}
+
+[data-theme='light'] .it-card {
+    background: #fff;
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .it-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.3));
+}
+
+[data-theme='light'] .it-text-content h3,
+[data-theme='light'] .it-header h2,
+[data-theme='light'] .reel-content h2,
+[data-theme='light'] .cat-tag,
+[data-theme='light'] .reel-cat {
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9), 0 0 6px rgba(0, 0, 0, 0.7);
+}
+
+[data-theme='light'] .it-text-content p,
+[data-theme='light'] .it-header p,
+[data-theme='light'] .reel-content p {
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+[data-theme='light'] .reel-frame {
+    background: #f5f5f5;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme='light'] .reel-bg::after {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
+}
+
+[data-theme='light'] .reel-number {
+    color: #000000;
+    opacity: 0.08;
+    /* slightly more visible in light mode */
+}
+
+[data-theme='light'] .reel-side-title {
+    color: #000000;
+    opacity: 0.08;
+    /* roughly matching reel-number */
+}
+
+[data-theme='light'] .reel-side-title:hover {
+    color: var(--color-accent);
+    opacity: 1;
+}

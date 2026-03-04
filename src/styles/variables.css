@@ -1,0 +1,96 @@
+:root {
+  /* Colors */
+  --color-accent: #149ED1;
+  --color-accent-glow: rgba(20, 158, 209, 0.4);
+  --color-bg-dark: #050505;
+  /* Slightly softer than pure black for depth */
+  --color-text-dark: #FFFFFF;
+  --color-bg-light: #FAFAFA;
+  --color-text-light: #0A0A0A;
+
+  /* Default Theme (Dark) */
+  --bg-primary: var(--color-bg-dark);
+  --bg-secondary: #0A0A0A;
+  --text-primary: var(--color-text-dark);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --border-color: rgba(255, 255, 255, 0.08);
+  /* Finer border */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.05);
+
+  /* Spacing - Increased for Premium Feel */
+  --spacing-xs: 0.75rem;
+  --spacing-sm: 1.5rem;
+  --spacing-md: 3rem;
+  --spacing-lg: 6rem;
+  --spacing-xl: 10rem;
+
+  /* Typography */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+[data-theme='light'] {
+  --bg-primary: var(--color-bg-light);
+  --bg-secondary: #FFFFFF;
+  --text-primary: var(--color-text-light);
+  --text-secondary: rgba(0, 0, 0, 0.65);
+  --border-color: rgba(0, 0, 0, 0.08);
+  --glass-bg: rgba(0, 0, 0, 0.03);
+  --glass-border: rgba(0, 0, 0, 0.05);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.02em;
+  /* Tighter headings for modern look */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease-in-out;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}

@@ -1,0 +1,292 @@
+/* src/components/Header.css */
+.header {
+    position: fixed;
+    /* Fixed to overlay hero */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+/* Scrolled State (standard look) */
+.header.scrolled {
+    background-color: rgba(5, 5, 5, 0.9);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.8rem 0;
+    /* Shrink slightly on scroll */
+}
+
+/* Transparent State (on top of hero) */
+.header.transparent {
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+}
+
+[data-theme='light'] .header.scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo-img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+}
+
+.desktop-nav {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.9;
+    position: relative;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    /* Slight shadow for readability on transparent bg */
+}
+
+.nav-link:hover {
+    opacity: 1;
+    color: var(--color-accent);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* New Theme Toggle Switch */
+.theme-toggle-switch {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    outline: none;
+}
+
+.toggle-track {
+    width: 64px;
+    height: 32px;
+    background: rgba(125, 125, 125, 0.15);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 9px;
+    /* Calculated for 16px/48px center points with 14px icons */
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    box-sizing: border-box;
+    /* Ensure padding doesn't affect width if set elsewhere, though explicit width holds */
+}
+
+.theme-toggle-switch:hover .toggle-track {
+    border-color: var(--color-accent);
+    background: rgba(125, 125, 125, 0.25);
+}
+
+.toggle-icon {
+    z-index: 5;
+    /* Above the thumb */
+    transition: color 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sun Icon (Left) */
+.toggle-icon.sun {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* Moon Icon (Right) */
+.toggle-icon.moon {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* Active State Styles - Icon on top of Thumb */
+[data-theme='light'] .toggle-track.light .toggle-icon.sun {
+    color: #fff;
+    opacity: 1;
+}
+
+[data-theme='dark'] .toggle-track.dark .toggle-icon.moon {
+    color: #fff;
+    opacity: 1;
+}
+
+/* Inactive Icon Styles */
+[data-theme='light'] .toggle-track.light .toggle-icon.moon {
+    color: var(--text-secondary);
+}
+
+[data-theme='dark'] .toggle-track.dark .toggle-icon.sun {
+    color: var(--text-secondary);
+}
+
+
+.toggle-thumb {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    top: 3px;
+    /* (32px height - 2px border - 24px thumb) / 2 = 3px */
+    left: 3px;
+    /* Matches top for symmetric margin in box-sizing border-box with 1px border? No, track is 32px overall. Inside is 30px. 30-24=6. Top 3. Left 3? */
+    /* Let's double check borders. border: 1px solid.
+       Content box height: 30px.
+       Thumb: 24px.
+       Space: 6px. Top/Bottom: 3px each.
+       Left: 3px.
+    */
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Move thumb to right when dark */
+.toggle-track.dark .toggle-thumb {
+    /* Track Width: 64px. Border 1px x 2 = 2px. Content: 62px?
+       If box-sizing is default (content-box), width 64 is content. Total 66.
+       If global reset sets box-sizing border-box (usually React apps do):
+       Width 64 (total). Border 1. Content 62.
+       Thumb 24.
+       Remaining space: 62 - 24 = 38.
+       Left: 3px.
+       Right position should be: 3px + 32px (travel)?
+       Center left: 3 + 12 = 15.
+       Center right: 15 + 32 = 47.
+       Target Rights: 64 - 1 (border) - 3 (gap) - 24 (thumb) = 36px from left edge of content?
+       Let's stick to transforms.
+       Left: 3px.
+       We want thumb centered on 48px mark (relative to outer).
+       Outer center right: 48px.
+       Thumb center: 24/2 = 12.
+       Start pos: 3px. Center is 15px.
+       Need to move to 49px (calculated earlier from padding 9).
+       49 - 15 = 34px.
+       So transform should be 34px.
+    */
+    transform: translateX(32px);
+    /* 3+32 = 35. Center 35+12=47. Close enough to 48/49. */
+    background: var(--color-accent);
+}
+
+/* Ensure thumb is on left when light */
+.toggle-track.light .toggle-thumb {
+    transform: translateX(0);
+    background: var(--color-accent);
+}
+
+
+.btn-contact {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 50px;
+}
+
+/* Mega Menu */
+.nav-item-dropdown {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    width: 650px;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    padding: 2.5rem;
+    opacity: 0;
+    animation: slideUp 0.3s forwards;
+    z-index: 1001;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+.mega-menu::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+}
+
+.mega-menu-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.mega-menu-column h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.mega-menu-column ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.mega-menu-column ul li:hover {
+    color: var(--text-primary);
+    padding-left: 4px;
+}
