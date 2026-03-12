@@ -119,3 +119,22 @@
 .highlight {
     background: linear-gradient(135deg, rgba(20, 158, 209, 0.1), transparent);
 }
+
+/* ===== PACKAGES PAGE MOBILE OVERRIDES ===== */
+@media (max-width: 768px) {
+    .pricing-grid {
+        padding-bottom: 3rem;
+    }
+
+    .pricing-card {
+        padding: 2rem 1.25rem;
+    }
+
+    .price {
+        font-size: 2.5rem;
+    }
+
+    .card-header h3 {
+        font-size: 1.1rem;
+    }
+}

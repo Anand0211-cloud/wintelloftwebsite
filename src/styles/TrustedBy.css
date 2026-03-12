@@ -50,6 +50,12 @@
     white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+    .marquee-track {
+        gap: 2rem;
+    }
+}
+
 .brand-logo {
     font-family: var(--font-heading);
     font-weight: 700;

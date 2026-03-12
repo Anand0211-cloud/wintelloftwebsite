@@ -63,3 +63,28 @@
     font-weight: 500;
     opacity: 0.9;
 }
+
+/* ===== SERVICES PAGE MOBILE OVERRIDES ===== */
+@media (max-width: 768px) {
+    .services-split {
+        padding-bottom: 3rem;
+    }
+
+    .service-category-card {
+        padding: 2rem 1.25rem;
+    }
+
+    .cat-icon-wrapper {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1.5rem;
+    }
+
+    .service-category-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .service-category-card p {
+        font-size: 0.9rem;
+    }
+}

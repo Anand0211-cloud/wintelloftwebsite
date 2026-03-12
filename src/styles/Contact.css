@@ -1,7 +1,7 @@
 /* src/styles/Contact.css */
 
 .contact-hero {
-    padding: 4rem 0 6rem;
+    padding: 2rem 0 4rem;
 }
 
 .contact-grid {
@@ -17,14 +17,14 @@
 }
 
 .contact-info h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
 }
 
 .contact-info p {
     opacity: 0.8;
     font-size: 1.1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .info-cards {
@@ -37,7 +37,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1.5rem;
+    padding: 1.2rem 1rem;
     background: var(--glass-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -69,7 +69,7 @@
     background: var(--glass-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 2.5rem;
+    padding: 2rem 1.5rem;
 }
 
 .contact-form-wrapper h2 {
@@ -78,8 +78,14 @@
 
 .contact-form {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
+}
+
+@media (min-width: 600px) {
+    .contact-form {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .form-group {
@@ -137,3 +143,45 @@
     text-align: center;
     opacity: 0.5;
 }
+
+/* ===== CONTACT PAGE MOBILE OVERRIDES ===== */
+@media (max-width: 768px) {
+    .contact-hero {
+        padding: 1.5rem 0 2.5rem;
+    }
+
+    .contact-grid {
+        gap: 2.5rem;
+    }
+
+    .contact-info h1 {
+        font-size: 1.8rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+    .info-card {
+        padding: 1rem;
+    }
+
+    .info-card .icon {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .contact-form-wrapper h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .map-section {
+        height: 250px;
+    }
+}

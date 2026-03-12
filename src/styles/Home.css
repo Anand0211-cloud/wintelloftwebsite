@@ -53,9 +53,9 @@
 }
 
 .hero h1 {
-    font-size: 4rem;
-    line-height: 1.1;
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
     font-weight: 800;
     letter-spacing: -0.04em;
 }
@@ -99,6 +99,19 @@
     align-items: center;
 }
 
+@media (max-width: 600px) {
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    
+    .hero-actions .btn {
+        width: 100%;
+    }
+}
+
 /* --- Core Section Structure --- */
 section {
     position: relative;
@@ -110,7 +123,7 @@ section {
 }
 
 .section-header-center h2 {
-    font-size: 3rem;
+    font-size: 2.2rem;
     letter-spacing: -0.02em;
 }
 
@@ -121,9 +134,9 @@ section {
 }
 
 .section-header-left h2 {
-    font-size: 3rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
-    line-height: 1.1;
+    line-height: 1.2;
 }
 
 .section-header-left p {
@@ -135,7 +148,7 @@ section {
 
 /* --- Service Blocks (Enhanced) --- */
 .service-blocks {
-    padding: 8rem 0;
+    padding: 4rem 0;
 }
 
 .services-grid-horizontal {
@@ -151,7 +164,7 @@ section {
 }
 
 .service-card {
-    padding: 2rem;
+    padding: 2rem 1.5rem;
     border-radius: 16px;
     background: var(--glass-bg);
     border: 1px solid var(--border-color);
@@ -217,7 +230,7 @@ section {
 
 /* --- Why Us (Bento Grid) --- */
 .why-us {
-    padding: 8rem 0;
+    padding: 4rem 0;
     position: relative;
     /* overflow: hidden; Removed to fix clipping on edge scaling */
     z-index: 1;
@@ -263,11 +276,11 @@ section {
 }
 
 .subtitle-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-secondary);
     margin-top: 0.5rem;
     /* Fixed overlap issue */
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     font-weight: 300;
     letter-spacing: 0.05em;
 }
@@ -310,7 +323,7 @@ section {
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
-    padding: 2.5rem;
+    padding: 2rem 1.5rem;
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -671,7 +684,7 @@ section {
 
 /* --- Stats Bar (Updated) --- */
 .stats-bar {
-    padding: 8rem 0;
+    padding: 4rem 0;
     /* Increased padding */
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
@@ -694,7 +707,7 @@ section {
 .stat-card {
     background: var(--glass-bg);
     border: 1px solid var(--border-color);
-    padding: 2.5rem 1.5rem;
+    padding: 2rem 1rem;
     border-radius: 16px;
     text-align: center;
     transition: all 0.3s ease;
@@ -720,7 +733,7 @@ section {
 }
 
 .stat-number {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
     line-height: 1;
@@ -747,7 +760,7 @@ section {
 
 /* --- Latest Work (Professional Look) --- */
 .latest-work {
-    padding: 10rem 0;
+    padding: 5rem 0;
     position: relative;
 }
 
@@ -1245,3 +1258,201 @@ section {
     letter-spacing: 0.02em;
     max-width: 600px;
 }
+
+/* ===== HOME PAGE MOBILE OVERRIDES ===== */
+@media (max-width: 768px) {
+    /* 1. Hero section: full screen height */
+    .hero {
+        min-height: 100vh;
+        padding: 0 1.5rem;
+    }
+
+    .hero-content {
+        padding-top: 40px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin: 0 auto 2rem;
+        padding: 0 0.5rem;
+    }
+
+    /* 2. Core Expertise — cards need visible gap from screen edges */
+    .service-blocks {
+        padding: 3rem 0;
+    }
+
+    .service-blocks.container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .services-grid-horizontal {
+        gap: 2.5rem;
+        padding: 0 0.25rem;
+    }
+
+    .service-card {
+        padding: 2rem 1.5rem;
+        height: auto;
+    }
+
+    .service-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .service-card p {
+        font-size: 0.95rem;
+    }
+
+    /* Section headers */
+    .section-header-center {
+        margin-bottom: 2.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .section-header-center h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-header-left {
+        padding: 0 0.25rem;
+    }
+
+    .section-header-left h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-header-left p {
+        font-size: 1rem;
+    }
+
+    /* 3. Why Intelloft — bento cards need visible gap from screen edges */
+    .why-us {
+        padding: 3rem 0;
+    }
+
+    .why-us.container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .bento-grid {
+        gap: 1rem;
+        padding: 0 0.25rem;
+    }
+
+    .bento-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .subtitle-text {
+        margin-bottom: 2rem;
+        padding: 0 0.5rem;
+    }
+
+    .bento-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .bento-content p {
+        font-size: 0.9rem;
+    }
+
+    .bento-content-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .bento-text {
+        max-width: 100%;
+    }
+
+    /* Stats */
+    .stats-bar {
+        padding: 3rem 0;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+    }
+
+    /* 4. Latest Work — text needs visible gap from screen edges */
+    .latest-work {
+        padding: 3rem 0;
+    }
+
+    .latest-work.container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .work-header {
+        margin-bottom: 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .work-grid {
+        gap: 2.5rem;
+    }
+
+    .work-info {
+        padding: 0 0.5rem;
+    }
+
+    .work-tags {
+        padding: 0 0.5rem;
+    }
+
+    .work-info h3 {
+        font-size: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .work-info p {
+        font-size: 0.95rem;
+        max-width: 100%;
+        padding: 0 0.5rem;
+    }
+
+    /* Contact Section */
+    .home-contact-section {
+        padding: 4rem 0;
+    }
+
+    .home-contact-info h2 {
+        font-size: 2rem;
+    }
+
+    .home-contact-info p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .home-contact-form-wrapper {
+        padding: 1.5rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        padding: 4rem 0;
+    }
+
+    .cta-title {
+        font-size: 2rem;
+        padding: 0 0.5rem;
+    }
+
+    .cta-subtitle {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+}
+
+

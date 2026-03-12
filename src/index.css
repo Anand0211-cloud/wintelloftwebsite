@@ -78,3 +78,19 @@ main {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ===== GLOBAL MOBILE OVERRIDES ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  main {
+    padding-top: 80px;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

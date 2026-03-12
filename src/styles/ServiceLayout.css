@@ -186,3 +186,42 @@
     justify-content: center;
     flex-shrink: 0;
 }
+
+/* ===== SERVICE LAYOUT MOBILE OVERRIDES ===== */
+@media (max-width: 768px) {
+    .service-layout-page {
+        padding-bottom: 4rem;
+    }
+
+    .service-header-mini {
+        padding: 3rem 0 2rem;
+    }
+
+    .service-header-mini h1 {
+        font-size: 2rem;
+        padding: 0 0.5rem;
+    }
+
+    .service-header-mini p {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .service-main-content {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+
+    .content-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .lead-text {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .sidebar-cta {
+        padding: 1.5rem;
+    }
+}

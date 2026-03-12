@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronDown, Sun, Moon } from 'lucide-react';
+import { ChevronDown, Sun, Moon, Menu, X } from 'lucide-react';
 import lightLogo from '../assets/logo-light.png';
 import darkLogo from '../assets/logo-dark.png';
 import './Header.css';
@@ -8,7 +8,13 @@ import './Header.css';
 const Header = ({ theme, toggleTheme }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+
+  // Close menu on route change
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
 
   // Determine which logo to show
   const currentLogo = theme === 'dark' ? darkLogo : lightLogo;
@@ -31,7 +37,7 @@ const Header = ({ theme, toggleTheme }) => {
 
   // Class for transparency: if home page AND not scrolled -> transparent
   // Otherwise -> standard (glass/solid)
-  const headerClass = `header ${isHomePage && !isScrolled ? 'transparent' : 'scrolled'}`;
+  const headerClass = `header ${isHomePage && !isScrolled ? 'transparent' : 'scrolled'} ${isMenuOpen ? 'menu-open' : ''}`;
 
   return (
     <header className={headerClass}>
@@ -104,9 +110,32 @@ const Header = ({ theme, toggleTheme }) => {
             </div>
           </button>
 
-          <Link to="/contact" className="btn btn-primary btn-sm btn-contact">
+          <Link to="/contact" className="btn btn-primary btn-sm btn-contact desktop-only">
             Contact
           </Link>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="mobile-menu-toggle"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation Overlay */}
+        <div className={`mobile-nav-overlay ${isMenuOpen ? 'active' : ''}`}>
+          <nav className="mobile-nav">
+            <Link to="/" className="mobile-nav-link">Home</Link>
+            <Link to="/about" className="mobile-nav-link">About</Link>
+            <Link to="/services" className="mobile-nav-link">Services</Link>
+            <Link to="/portfolio" className="mobile-nav-link">Portfolio</Link>
+            <Link to="/packages" className="mobile-nav-link">Packages</Link>
+            <Link to="/contact" className="btn btn-primary btn-mobile-contact">
+              Contact Us
+            </Link>
+          </nav>
         </div>
       </div>
     </header>

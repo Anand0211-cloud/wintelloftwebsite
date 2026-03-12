@@ -85,3 +85,33 @@
     opacity: 0.5;
     font-size: 0.85rem;
 }
+
+/* ===== FOOTER MOBILE OVERRIDES ===== */
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .footer-content {
+        gap: 2rem;
+        margin-bottom: 2rem;
+        padding: 0 1.25rem;
+    }
+
+    .footer-logo {
+        font-size: 1.3rem;
+    }
+
+    .brand-col p {
+        font-size: 0.9rem;
+    }
+
+    .footer-col h3 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-bottom {
+        padding: 1.5rem 1.25rem 0;
+    }
+}
