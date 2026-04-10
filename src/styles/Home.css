@@ -1261,6 +1261,14 @@ section {
 
 /* ===== HOME PAGE MOBILE OVERRIDES ===== */
 @media (max-width: 768px) {
+    .home-page {
+        overflow-x: hidden;
+    }
+
+    .card-security-outer {
+        overflow: hidden;
+    }
+
     /* 1. Hero section: full screen height */
     .hero {
         min-height: 100vh;
@@ -1366,6 +1374,10 @@ section {
 
     .bento-text {
         max-width: 100%;
+    }
+
+    .card-watermark-outside {
+        display: none;
     }
 
     /* Stats */
