@@ -264,8 +264,6 @@
 
     .hiring-notice {
         padding: 3rem 1.25rem;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
     }
 
     .hiring-notice h2 {
@@ -282,8 +280,9 @@
     }
 
     .social-cta-card {
+        padding: 1.25rem 1.25rem;
         width: 100%;
-        max-width: 320px;
+        max-width: 340px;
         min-width: auto;
     }
 
