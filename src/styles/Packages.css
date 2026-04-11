@@ -122,6 +122,20 @@
 
 /* ===== PACKAGES PAGE MOBILE OVERRIDES ===== */
 @media (max-width: 768px) {
+    .pricing-tabs {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        padding: 0 1rem;
+    }
+
+    .tab-btn {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.9rem;
+        flex: 1;
+        min-width: 0;
+        text-align: center;
+    }
+
     .pricing-grid {
         padding-bottom: 3rem;
     }

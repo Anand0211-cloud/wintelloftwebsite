@@ -95,16 +95,34 @@ const marketingProjects = [
 // IT Portfolio Component (Horizontal Swipe)
 const ITPortfolio = ({ onBack }) => {
     const carouselRef = useRef(null);
+    const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
+
+    React.useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const scroll = (direction) => {
         if (carouselRef.current) {
             const { current } = carouselRef;
-            // Scroll by card width (60vw) + gap (10vw) = 70vw
-            const scrollAmount = window.innerWidth * 0.7;
-            if (direction === 'left') {
-                current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+
+            if (isMobile) {
+                // Scroll by card height + gap
+                const scrollAmount = window.innerHeight * 0.4;
+                if (direction === 'up' || direction === 'left') {
+                    current.scrollBy({ top: -scrollAmount, behavior: 'smooth' });
+                } else {
+                    current.scrollBy({ top: scrollAmount, behavior: 'smooth' });
+                }
             } else {
-                current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                // Scroll by card width (60vw) + gap (10vw) = 70vw
+                const scrollAmount = window.innerWidth * 0.7;
+                if (direction === 'left') {
+                    current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                } else {
+                    current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
             }
         }
     };
@@ -121,11 +139,17 @@ const ITPortfolio = ({ onBack }) => {
 
 
             {/* Navigation Arrows */}
-            <button className="nav-arrow-btn nav-left" onClick={() => scroll('left')}>
-                <ChevronLeft size={32} />
+            <button
+                className="nav-arrow-btn nav-left"
+                onClick={() => scroll(isMobile ? 'up' : 'left')}
+            >
+                {isMobile ? <ChevronUp size={32} /> : <ChevronLeft size={32} />}
             </button>
-            <button className="nav-arrow-btn nav-right" onClick={() => scroll('right')}>
-                <ChevronRight size={32} />
+            <button
+                className="nav-arrow-btn nav-right"
+                onClick={() => scroll(isMobile ? 'down' : 'right')}
+            >
+                {isMobile ? <ChevronDown size={32} /> : <ChevronRight size={32} />}
             </button>
 
             <div className="it-carousel-wrapper" ref={carouselRef}>
@@ -241,6 +265,15 @@ const Portfolio = () => {
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.5 }}
                     >
+                        {/* Premium Background Elements */}
+                        <div className="premium-bg-effects">
+                            <div className="glow-orb orb-1"></div>
+                            <div className="glow-orb orb-2"></div>
+                            <div className="glow-orb orb-3"></div>
+                            <div className="digital-grid-overlay"></div>
+                            <div className="mesh-gradient-overlay"></div>
+                        </div>
+
                         {/* Decorative Revolving Arch (Rainbow Style) */}
                         <div className="arch-carousel-wrapper">
                             <div className="arch-wheel">

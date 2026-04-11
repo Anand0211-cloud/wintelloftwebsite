@@ -94,7 +94,10 @@
 
 .sidebar-cta {
     padding: 2rem;
+    border-radius: 8px;
     text-align: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .sidebar-cta h4 {
@@ -107,11 +110,21 @@
     opacity: 0.7;
 }
 
+.pc-only {
+    display: flex;
+}
+
+.mobile-only {
+    display: none;
+}
+
 /* Main Content */
 .service-main-content {
     padding: 3rem;
     border-radius: 12px;
     min-height: 600px;
+    scroll-margin-top: 100px;
+    /* Offset for header when scrolling to content */
 }
 
 .content-header {
@@ -189,39 +202,127 @@
 
 /* ===== SERVICE LAYOUT MOBILE OVERRIDES ===== */
 @media (max-width: 768px) {
+    .mobile-only {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pc-only {
+        display: none !important;
+    }
+
     .service-layout-page {
         padding-bottom: 4rem;
+        overflow-x: hidden;
+    }
+
+    .service-content-wrapper {
+        width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    .service-sidebar {
+        min-width: 0;
+        width: 100%;
     }
 
     .service-header-mini {
-        padding: 3rem 0 2rem;
+        padding-top: 8rem;
+        padding-bottom: 2rem;
     }
 
     .service-header-mini h1 {
-        font-size: 2rem;
-        padding: 0 0.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 0.75rem;
     }
 
     .service-header-mini p {
+        max-width: 100%;
+        margin-left: 1.5em;
+        margin-right: 1.5rem;
+
+    }
+
+    .sidebar-title {
         font-size: 1rem;
-        padding: 0 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .vertical-tabs {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 0.5rem 0;
+        gap: 0.75rem;
+        scrollbar-width: none;
+        margin-bottom: 1.5rem;
+        mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    }
+
+    .vertical-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .v-tab-btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
+        border-radius: 50px;
+        color: #fff;
+    }
+
+    .v-tab-btn.active {
+        background: var(--color-accent);
+        color: #fff;
+        border: 1px solid var(--color-accent);
+        border-radius: 50px;
+    }
+
+    .tab-arrow {
+        display: none;
     }
 
     .service-main-content {
         padding: 1.5rem;
         min-height: auto;
+        border-radius: 20px;
+        margin-bottom: 2rem;
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
     .content-header h2 {
         font-size: 1.6rem;
+        word-wrap: break-word;
+    }
+
+    .content-hero-image {
+        height: 200px;
+        border-radius: 15px;
+        max-width: 100%;
     }
 
     .lead-text {
         font-size: 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
+        word-wrap: break-word;
+    }
+
+    .feature-item-small {
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .sidebar-cta {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+        width: 100%;
+        box-sizing: border-box;
     }
-}
+}
