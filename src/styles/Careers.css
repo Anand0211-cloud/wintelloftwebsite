@@ -1,0 +1,275 @@
+/* src/styles/Careers.css */
+
+.careers-page {
+    padding-bottom: 4rem;
+}
+
+.careers-content {
+    padding: 0 0 4rem;
+}
+
+/* Hiring Notice */
+.hiring-notice {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 4rem;
+}
+
+.notice-glow {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(20, 158, 209, 0.12) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.notice-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(20, 158, 209, 0.1);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    animation: pulseIcon 3s ease-in-out infinite;
+}
+
+@keyframes pulseIcon {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(20, 158, 209, 0.3); }
+    50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(20, 158, 209, 0.2); }
+}
+
+.hiring-notice h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+[data-theme='light'] .hiring-notice h2 {
+    color: #111;
+}
+
+.hiring-notice > p {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Social CTA Cards */
+.social-cta-cards {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-cta-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 2rem;
+    border-radius: 16px;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    min-width: 240px;
+}
+
+.social-cta-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.social-cta-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.15rem;
+}
+
+.social-cta-card p {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.social-cta-card .arrow-icon {
+    margin-left: auto;
+    opacity: 0.4;
+    transition: all 0.3s;
+}
+
+.social-cta-card:hover .arrow-icon {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+/* Instagram */
+.instagram-card {
+    border-color: rgba(225, 48, 108, 0.3);
+    background: linear-gradient(135deg, rgba(225, 48, 108, 0.08), rgba(131, 58, 180, 0.08));
+}
+
+.instagram-card:hover {
+    border-color: rgba(225, 48, 108, 0.6);
+    background: linear-gradient(135deg, rgba(225, 48, 108, 0.15), rgba(131, 58, 180, 0.15));
+}
+
+/* LinkedIn */
+.linkedin-card {
+    border-color: rgba(10, 102, 194, 0.3);
+    background: linear-gradient(135deg, rgba(10, 102, 194, 0.08), rgba(10, 102, 194, 0.04));
+}
+
+.linkedin-card:hover {
+    border-color: rgba(10, 102, 194, 0.6);
+    background: linear-gradient(135deg, rgba(10, 102, 194, 0.15), rgba(10, 102, 194, 0.08));
+}
+
+/* Light mode social cards */
+[data-theme='light'] .social-cta-card {
+    color: #111;
+    border-color: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme='light'] .instagram-card {
+    border-color: rgba(225, 48, 108, 0.2);
+    background: linear-gradient(135deg, rgba(225, 48, 108, 0.05), rgba(131, 58, 180, 0.05));
+}
+
+[data-theme='light'] .instagram-card:hover {
+    background: linear-gradient(135deg, rgba(225, 48, 108, 0.1), rgba(131, 58, 180, 0.1));
+}
+
+[data-theme='light'] .linkedin-card {
+    border-color: rgba(10, 102, 194, 0.2);
+    background: linear-gradient(135deg, rgba(10, 102, 194, 0.05), rgba(10, 102, 194, 0.03));
+}
+
+[data-theme='light'] .linkedin-card:hover {
+    background: linear-gradient(135deg, rgba(10, 102, 194, 0.1), rgba(10, 102, 194, 0.08));
+}
+
+/* Why Work Section */
+.why-work-section {
+    margin-bottom: 2rem;
+}
+
+.why-work-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+[data-theme='light'] .why-work-section h2 {
+    color: #111;
+}
+
+.perks-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+    .perks-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.perk-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.perk-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-5px);
+}
+
+.perk-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(20, 158, 209, 0.1);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+}
+
+.perk-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+[data-theme='light'] .perk-card h3 {
+    color: #111;
+}
+
+.perk-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Light mode */
+[data-theme='light'] .hiring-notice {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .perk-card {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* ===== CAREERS MOBILE OVERRIDES ===== */
+@media (max-width: 768px) {
+    .hiring-notice {
+        padding: 3rem 1.5rem;
+    }
+
+    .hiring-notice h2 {
+        font-size: 1.8rem;
+    }
+
+    .hiring-notice > p {
+        font-size: 1rem;
+    }
+
+    .social-cta-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-cta-card {
+        width: 100%;
+        max-width: 320px;
+        min-width: auto;
+    }
+
+    .why-work-section h2 {
+        font-size: 1.6rem;
+    }
+}

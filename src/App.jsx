@@ -10,6 +10,8 @@ import ServiceIT from './pages/ServiceIT';
 import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
+import Careers from './pages/Careers';
+import Privacy from './pages/Privacy';
 import './index.css';
 
 // Scrolls to top on every route change
@@ -46,6 +48,8 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/packages" element={<Packages />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
         <Footer theme={theme} />
       </div>

@@ -23,9 +23,9 @@ const Footer = ({ theme }) => {
                         Premium IT consultancy and Multimedia solutions for businesses that demand excellence.
                     </p>
                     <div className="social-links">
-                        <a href="#" aria-label="LinkedIn"><Linkedin size={20} /></a>
-                        <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
-                        <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
+                        <a href="https://www.linkedin.com/company/intelloft/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={20} /></a>
+                        <a href="https://x.com/intelloft" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter size={20} /></a>
+                        <a href="https://www.instagram.com/intelloft_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={20} /></a>
                     </div>
                 </div>
 
