@@ -87,6 +87,7 @@ main {
 
   main {
     padding-top: 80px;
+    overflow-x: hidden;
   }
 
   .btn {
