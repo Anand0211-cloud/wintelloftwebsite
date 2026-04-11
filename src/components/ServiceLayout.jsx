@@ -47,7 +47,7 @@ const ServiceLayout = ({ title, subtitle, tabs }) => {
                     <div className="sidebar-cta glass-card pc-only">
                         <h4>Need a custom solution?</h4>
                         <p>We tailor our strategies to your specific business goals.</p>
-                        <button className="btn btn-primary full-width">Contact Us</button>
+                        <a href="mailto:contact@intelloft.com?subject=Custom%20Solution%20Inquiry&body=Hi%20Intelloft%2C%0A%0AI'm%20looking%20for%20a%20custom%20solution%20tailored%20to%20my%20business%20goals.%20Please%20reach%20out%20so%20we%20can%20discuss%20further.%0A%0AThank%20you." className="btn btn-primary full-width" style={{ textDecoration: 'none' }}>Contact Us</a>
                     </div>
                 </div>
 
@@ -96,7 +96,7 @@ const ServiceLayout = ({ title, subtitle, tabs }) => {
                 <div className="sidebar-cta glass-card mobile-only">
                     <h4>Need a custom solution?</h4>
                     <p>We tailor our strategies to your specific business goals.</p>
-                    <button className="btn btn-primary full-width">Contact Us</button>
+                    <a href="mailto:contact@intelloft.com?subject=Custom%20Solution%20Inquiry&body=Hi%20Intelloft%2C%0A%0AI'm%20looking%20for%20a%20custom%20solution%20tailored%20to%20my%20business%20goals.%20Please%20reach%20out%20so%20we%20can%20discuss%20further.%0A%0AThank%20you." className="btn btn-primary full-width" style={{ textDecoration: 'none' }}>Contact Us</a>
                 </div>
             </section>
         </div>

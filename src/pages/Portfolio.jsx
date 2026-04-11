@@ -103,6 +103,14 @@ const ITPortfolio = ({ onBack }) => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    // Reset scroll to the first card on mount
+    React.useEffect(() => {
+        if (carouselRef.current) {
+            carouselRef.current.scrollTop = 0;
+            carouselRef.current.scrollLeft = 0;
+        }
+    }, []);
+
     const scroll = (direction) => {
         if (carouselRef.current) {
             const { current } = carouselRef;

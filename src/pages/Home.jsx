@@ -64,8 +64,8 @@ const Home = () => {
                         Intelloft delivers premium IT consultancy and creative marketing strategies for forward-thinking enterprises.
                     </p>
                     <div className="hero-actions">
-                        <button className="btn btn-primary">Start Transformation <ArrowRight size={18} /></button>
-                        <button className="btn btn-outline" style={{ background: 'var(--glass-bg)' }}>View Work</button>
+                        <a href="mailto:contact@intelloft.com?subject=Start%20My%20Digital%20Transformation&body=Hi%20Intelloft%2C%0A%0AI'm%20interested%20in%20starting%20a%20digital%20transformation%20for%20my%20business.%20Please%20get%20in%20touch%20to%20discuss%20further.%0A%0AThank%20you." className="btn btn-primary" style={{ textDecoration: 'none' }}>Start Transformation <ArrowRight size={18} /></a>
+                        <Link to="/portfolio" className="btn btn-outline" style={{ background: 'var(--glass-bg)', textDecoration: 'none' }}>View Work</Link>
                     </div>
                 </motion.div>
             </section>
@@ -318,7 +318,7 @@ const Home = () => {
                     <h2 className="cta-title">Ready to <span className="text-accent">scale?</span></h2>
                     <p className="cta-subtitle">Join the ranks of digital pioneers.</p>
                     <div className="cta-buttons">
-                        <button className="btn btn-primary">Get a Free Quote</button>
+                        <a href="mailto:contact@intelloft.com?subject=Free%20Quote%20Request&body=Hi%20Intelloft%2C%0A%0AI'd%20like%20to%20request%20a%20free%20quote%20for%20my%20project.%20Please%20reach%20out%20to%20discuss%20my%20requirements.%0A%0AThank%20you." className="btn btn-primary" style={{ textDecoration: 'none' }}>Get a Free Quote</a>
                     </div>
                 </div>
             </section>

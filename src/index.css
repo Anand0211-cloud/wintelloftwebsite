@@ -27,6 +27,7 @@ main {
   align-items: center;
   gap: 0.5rem;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .btn-primary {

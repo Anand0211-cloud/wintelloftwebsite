@@ -49,7 +49,7 @@ const Packages = () => {
                                 <li><CheckCircle size={16} /> Monthly performance report</li>
                                 <li><CheckCircle size={16} /> Email & WhatsApp support</li>
                             </ul>
-                            <button className="btn btn-primary full-width">Get Started</button>
+                            <a href="mailto:info@intelloft.com?subject=Interested%20in%20Marketing%20Starter%20Package&body=Hi%20Intelloft%2C%0A%0AI'm%20interested%20in%20the%20Marketing%20Starter%20Package%20(%24250%2Fmonth).%20Please%20share%20more%20details.%0A%0AThank%20you." className="btn btn-primary full-width" style={{ textDecoration: 'none' }}>Get Started</a>
                         </div>
                         <div className="pricing-card popular">
                             <div className="badge">Most Popular</div>
@@ -66,7 +66,7 @@ const Packages = () => {
                                 <li><CheckCircle size={16} /> Advanced analytics dashboard</li>
                                 <li><CheckCircle size={16} /> Priority support</li>
                             </ul>
-                            <button className="btn btn-primary full-width">Select Growth</button>
+                            <a href="mailto:info@intelloft.com?subject=Interested%20in%20Marketing%20Growth%20Package&body=Hi%20Intelloft%2C%0A%0AI'm%20interested%20in%20the%20Marketing%20Growth%20Package%20(%24399%2Fmonth).%20Please%20share%20more%20details.%0A%0AThank%20you." className="btn btn-primary full-width" style={{ textDecoration: 'none' }}>Select Growth</a>
                         </div>
                         <div className="pricing-card">
                             <div className="card-header">
@@ -82,7 +82,7 @@ const Packages = () => {
                                 <li><CheckCircle size={16} /> Dedicated marketing manager</li>
                                 <li><CheckCircle size={16} /> 24/7 priority access</li>
                             </ul>
-                            <button className="btn btn-outline full-width">Contact Sales</button>
+                            <a href="mailto:info@intelloft.com?subject=Interested%20in%20Marketing%20Scale%20Package&body=Hi%20Intelloft%2C%0A%0AI'm%20interested%20in%20the%20Marketing%20Scale%20Package%20(%24599%2Fmonth).%20Please%20share%20more%20details.%0A%0AThank%20you." className="btn btn-outline full-width" style={{ textDecoration: 'none' }}>Contact Sales</a>
                         </div>
                     </>
                 )}
@@ -103,7 +103,7 @@ const Packages = () => {
                                 <li><CheckCircle size={16} /> SEO-friendly structure</li>
                                 <li><CheckCircle size={16} /> Maintenance & support available as an add-on</li>
                             </ul>
-                            <button className="btn btn-primary full-width">Select Business</button>
+                            <a href="mailto:info@intelloft.com?subject=Interested%20in%20Business%20Website%20Package&body=Hi%20Intelloft%2C%0A%0AI'm%20interested%20in%20the%20Business%20Website%20Package%20(%24499%20one%20time).%20Please%20share%20more%20details.%0A%0AThank%20you." className="btn btn-primary full-width" style={{ textDecoration: 'none' }}>Select Business</a>
                         </div>
                         <div className="pricing-card">
                             <div className="card-header">
@@ -121,7 +121,7 @@ const Packages = () => {
                                 <li><CheckCircle size={16} /> Basic security & backup setup</li>
                                 <li><CheckCircle size={16} /> Maintenance & support available as an add-on</li>
                             </ul>
-                            <button className="btn btn-primary full-width">Select E-commerce</button>
+                            <a href="mailto:info@intelloft.com?subject=Interested%20in%20E-Commerce%20Website%20Package&body=Hi%20Intelloft%2C%0A%0AI'm%20interested%20in%20the%20E-Commerce%20Website%20Package%20(%24720%20one%20time).%20Please%20share%20more%20details.%0A%0AThank%20you." className="btn btn-primary full-width" style={{ textDecoration: 'none' }}>Select E-commerce</a>
                         </div>
                         <div className="pricing-card highlight">
                             <div className="card-header">
@@ -135,7 +135,7 @@ const Packages = () => {
                                 <li><CheckCircle size={16} /> Legacy system migration</li>
                                 <li><CheckCircle size={16} /> Dedicated development team</li>
                             </ul>
-                            <button className="btn btn-primary full-width">Get a Quote</button>
+                            <a href="mailto:info@intelloft.com?subject=Enterprise%20Solutions%20Quote%20Request&body=Hi%20Intelloft%2C%0A%0AI'm%20interested%20in%20your%20Enterprise%20Solutions%20for%20custom%20development.%20Please%20reach%20out%20to%20discuss%20my%20requirements.%0A%0AThank%20you." className="btn btn-primary full-width" style={{ textDecoration: 'none' }}>Get a Quote</a>
                         </div>
                     </>
                 )}
@@ -155,7 +155,7 @@ const Packages = () => {
                                 <li><CheckCircle size={16} /> Social media setup + 15 posts/month</li>
                                 <li><CheckCircle size={16} /> Website maintenance & security</li>
                             </ul>
-                            <button className="btn btn-primary full-width">Get Started</button>
+                            <a href="mailto:info@intelloft.com?subject=Interested%20in%20Launchpad%20Package&body=Hi%20Intelloft%2C%0A%0AI'm%20interested%20in%20the%20Digital%20Growth%20Launchpad%20Package%20(%24299%2Fmonth).%20Please%20share%20more%20details.%0A%0AThank%20you." className="btn btn-primary full-width" style={{ textDecoration: 'none' }}>Get Started</a>
                         </div>
                         <div className="pricing-card popular">
                             <div className="badge">Most Popular</div>
@@ -171,7 +171,7 @@ const Packages = () => {
                                 <li><CheckCircle size={16} /> Lead capture & analytics setup</li>
                                 <li><CheckCircle size={16} /> Paid ads setup (management included)</li>
                             </ul>
-                            <button className="btn btn-primary full-width">Select Accelerator</button>
+                            <a href="mailto:info@intelloft.com?subject=Interested%20in%20Accelerator%20Package&body=Hi%20Intelloft%2C%0A%0AI'm%20interested%20in%20the%20Digital%20Growth%20Accelerator%20Package%20(%24599%2Fmonth).%20Please%20share%20more%20details.%0A%0AThank%20you." className="btn btn-primary full-width" style={{ textDecoration: 'none' }}>Select Accelerator</a>
                         </div>
                         <div className="pricing-card">
                             <div className="card-header">
@@ -186,7 +186,7 @@ const Packages = () => {
                                 <li><CheckCircle size={16} /> Advanced SEO + retargeting</li>
                                 <li><CheckCircle size={16} /> Dedicated marketing & tech manager</li>
                             </ul>
-                            <button className="btn btn-primary full-width">Get a Quote</button>
+                            <a href="mailto:info@intelloft.com?subject=Dominator%20Package%20Quote%20Request&body=Hi%20Intelloft%2C%0A%0AI'm%20interested%20in%20the%20Digital%20Growth%20Dominator%20Package%20(custom%20pricing).%20Please%20reach%20out%20to%20discuss%20my%20requirements.%0A%0AThank%20you." className="btn btn-primary full-width" style={{ textDecoration: 'none' }}>Get a Quote</a>
                         </div>
                     </>
                 )}

@@ -360,6 +360,19 @@ section {
     white-space: nowrap;
     pointer-events: none;
     z-index: 0;
+    transition: color 0.5s ease;
+}
+
+.card-security-outer:hover .card-watermark-outside {
+    color: rgba(20, 158, 209, 0.2);
+}
+
+[data-theme='light'] .card-watermark-outside {
+    color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='light'] .card-security-outer:hover .card-watermark-outside {
+    color: rgba(20, 158, 209, 0.25);
 }
 
 .bento-card:hover {
@@ -1099,6 +1112,11 @@ section {
 .form-group select option {
     background: #1a1a1a;
     color: #fff;
+}
+
+[data-theme='light'] .form-group select option {
+    background: #fff;
+    color: #111;
 }
 
 [data-theme='light'] .form-group input,

@@ -6,6 +6,8 @@
     background: #000;
     overflow-x: hidden;
     position: relative;
+    margin-top: -100px;
+    padding-top: 100px;
 }
 
 /* --- Hero & Selection View --- */
@@ -17,7 +19,7 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 6rem 0;
+    padding: 10rem 0 6rem;
     background: #000;
 }
 
@@ -276,9 +278,39 @@
 }
 
 
+
 /* Light Mode Overrides */
 [data-theme='light'] .portfolio-page-revamp {
     background: #f5f5f5;
+}
+
+[data-theme='light'] .portfolio-hero {
+    background: linear-gradient(180deg, #e8f4fa 0%, #f5f5f5 100%);
+}
+
+[data-theme='light'] .selection-header h1 {
+    color: #111;
+}
+
+[data-theme='light'] .selection-header p {
+    color: #555;
+}
+
+[data-theme='light'] .section-label {
+    background: rgba(20, 158, 209, 0.08);
+    border-color: rgba(20, 158, 209, 0.15);
+}
+
+[data-theme='light'] .glow-orb {
+    opacity: 0.08;
+}
+
+[data-theme='light'] .digital-grid-overlay {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+[data-theme='light'] .mesh-gradient-overlay {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(245, 245, 245, 0.8) 100%);
 }
 
 [data-theme='light'] .revolving-ring {
@@ -834,7 +866,7 @@
     }
 
     .portfolio-hero {
-        padding: 4rem 0;
+        padding: 7rem 0 4rem;
         min-height: auto;
     }
 
@@ -931,17 +963,18 @@
     }
 
     .it-carousel-wrapper {
-        height: 85vh;
+        height: calc(100vh - 5rem);
         overflow-x: hidden;
         overflow-y: auto;
-        scroll-snap-type: y mandatory;
+        scroll-snap-type: y proximity;
         padding: 0;
+        align-items: flex-start;
     }
 
     .it-carousel {
         flex-direction: column;
         width: 100%;
-        padding: 2rem 0 10rem 0;
+        padding: 1rem 0 10rem 0;
         gap: 2rem;
         align-items: center;
     }
@@ -951,7 +984,7 @@
         height: 38vh;
         aspect-ratio: auto;
         border-radius: 20px;
-        scroll-snap-align: center;
+        scroll-snap-align: start;
         flex-shrink: 0;
     }
 

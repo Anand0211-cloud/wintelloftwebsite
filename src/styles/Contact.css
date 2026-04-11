@@ -124,6 +124,24 @@
     border-color: var(--color-accent);
 }
 
+.form-group select option {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+[data-theme='light'] .form-group select option {
+    background: #fff;
+    color: #111;
+}
+
+[data-theme='light'] .form-group input,
+[data-theme='light'] .form-group select,
+[data-theme='light'] .form-group textarea {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.12);
+    color: #111;
+}
+
 .btn.full {
     display: flex;
     justify-content: center;
