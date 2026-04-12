@@ -9,7 +9,8 @@
     /* slightly taller for parallax feel if needed */
     background-size: cover;
     background-position: center;
-    z-index: -1;
+    z-index: 0;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
     opacity: 0.15;
     /* Subtle background */
@@ -106,7 +107,7 @@
         max-width: 320px;
         margin: 0 auto;
     }
-    
+
     .hero-actions .btn {
         width: 100%;
     }
@@ -1484,5 +1485,3 @@ section {
         padding: 0 0.5rem;
     }
 }
-
-
