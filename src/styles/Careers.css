@@ -46,8 +46,17 @@
 }
 
 @keyframes pulseIcon {
-    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(20, 158, 209, 0.3); }
-    50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(20, 158, 209, 0.2); }
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(20, 158, 209, 0.3);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(20, 158, 209, 0.2);
+    }
 }
 
 .hiring-notice h2 {
@@ -60,7 +69,7 @@
     color: #111;
 }
 
-.hiring-notice > p {
+.hiring-notice>p {
     max-width: 600px;
     margin: 0 auto 3rem;
     color: var(--text-secondary);
@@ -270,7 +279,7 @@
         font-size: 1.8rem;
     }
 
-    .hiring-notice > p {
+    .hiring-notice>p {
         font-size: 1rem;
     }
 
