@@ -1,5 +1,13 @@
 import React from 'react';
 import ServiceLayout from '../components/ServiceLayout';
+import mktSocialD from '../assets/Services/Marketing/Social Media.png';
+import mktSocialM from '../assets/Services/Marketing/social media mobile.jpeg';
+import mktAdsD from '../assets/Services/Marketing/Google and Meta Ads D.jpeg';
+import mktAdsM from '../assets/Services/Marketing/Google and Meta Ads M.jpeg';
+import mktCampaignD from '../assets/Services/Marketing/advertisement campaign d.jpeg';
+import mktCampaignM from '../assets/Services/Marketing/advertisement campaign m.jpeg';
+import mktEditingD from '../assets/Services/Marketing/Editing desktop.jpeg';
+import mktEditingM from '../assets/Services/Marketing/Editing mobile.jpeg';
 
 const marketingTabs = [
     {
@@ -16,7 +24,9 @@ const marketingTabs = [
         title: 'Social Media Management',
         description: 'Building communities, not just followers. We create engaging content that sparks conversations and builds brand loyalty.',
         features: ['Platform Strategy (LinkedIn, IG, Twitter)', 'Community Management', 'Influencer Partnerships', 'Social Listening & Analytics'],
-        image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1000'
+        imageD: mktSocialD,
+        imageM: mktSocialM,
+        image: mktSocialD
     },
     {
         id: 'ads',
@@ -24,7 +34,9 @@ const marketingTabs = [
         title: 'Performance Advertising',
         description: 'Maximize your ROAS with precision targeting. We design high-converting ad campaigns across Google, Facebook, Instagram, and LinkedIn.',
         features: ['A/B Testing Creatives', 'Retargeting Campaigns', 'Funnel Optimization', 'Detailed Performance Reporting'],
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000'
+        imageD: mktAdsD,
+        imageM: mktAdsM,
+        image: mktAdsD
     },
     {
         id: 'campaigns',
@@ -32,7 +44,9 @@ const marketingTabs = [
         title: 'Strategic Advertisement Campaigns',
         description: 'End-to-end campaign management that delivers measurable results. From concept to execution, we craft campaigns that resonate.',
         features: ['Multi-Channel Strategy', 'Creative Concept Development', 'Media Buying & Planning', 'Campaign Performance Tracking'],
-        image: 'https://images.unsplash.com/photo-1542744094-24638ea0b3b5?auto=format&fit=crop&q=80&w=1000'
+        imageD: mktCampaignD,
+        imageM: mktCampaignM,
+        image: mktCampaignD
     },
     {
         id: 'infographics',
@@ -56,7 +70,9 @@ const marketingTabs = [
         title: 'Expert Post-Production Editing',
         description: 'Refining raw footage into polished masterpieces. Our editing services ensure your content is crisp, engaging, and professional.',
         features: ['Color Grading & Correction', 'Audio Mixing & Mastering', 'VFX & Motion Graphics', 'Format Optimization'],
-        image: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&q=80&w=1000'
+        imageD: mktEditingD,
+        imageM: mktEditingM,
+        image: mktEditingD
     }
 ];
 

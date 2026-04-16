@@ -146,6 +146,7 @@
 .content-hero-image {
     width: 100%;
     height: 300px;
+    background-image: var(--image-desktop);
     background-size: cover;
     background-position: center;
     border-radius: 8px;
@@ -304,6 +305,7 @@
 
     .content-hero-image {
         height: 200px;
+        background-image: var(--image-mobile);
         border-radius: 15px;
         max-width: 100%;
     }

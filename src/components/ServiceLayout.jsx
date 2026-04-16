@@ -67,7 +67,13 @@ const ServiceLayout = ({ title, subtitle, tabs }) => {
                                 <div className="title-underline"></div>
                             </div>
 
-                            <div className="content-hero-image" style={{ backgroundImage: `url(${activeContent.image || 'https://via.placeholder.com/800x400'})` }}></div>
+                            <div 
+                                className="content-hero-image" 
+                                style={{ 
+                                    '--image-desktop': `url(${activeContent.imageD || activeContent.image || 'https://via.placeholder.com/1200x400'})`,
+                                    '--image-mobile': `url(${activeContent.imageM || activeContent.image || 'https://via.placeholder.com/800x400'})`
+                                }}
+                            ></div>
 
                             <div className="content-body">
                                 <p className="lead-text">{activeContent.description}</p>

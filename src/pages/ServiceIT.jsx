@@ -1,5 +1,11 @@
 import React from 'react';
 import ServiceLayout from '../components/ServiceLayout';
+import itECCD from '../assets/Services/IT/E commerce D.jpeg';
+import itECCM from '../assets/Services/IT/E commerce M.jpeg';
+import itChatbotD from '../assets/Services/IT/AI Chatbot D.jpeg';
+import itChatbotM from '../assets/Services/IT/AI Chatbot M.jpeg';
+import itAutoD from '../assets/Services/IT/Automation Solution D.jpeg';
+import itAutoM from '../assets/Services/IT/Automation Solution M.jpeg';
 
 const itTabs = [
     {
@@ -24,7 +30,9 @@ const itTabs = [
         title: 'E-Commerce Engineering',
         description: 'Create robust online stores that drive sales. We specialize in Shopify, WooCommerce, and headless commerce architectures.',
         features: ['Platform Migration', 'Custom Checkout Flows', 'Payment Gateway Integration', 'High-Performance Storefronts'],
-        image: 'https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=1000'
+        imageD: itECCD,
+        imageM: itECCM,
+        image: itECCD // Global fallback
     },
     {
         id: 'ai-integration',
@@ -40,7 +48,9 @@ const itTabs = [
         title: 'Intelligent Conversational Agents',
         description: 'Automate customer support, lead generation, and internal processes using advanced custom-trained AI chatbots.',
         features: ['24/7 Automated Support', 'Natural Language Processing', 'Knowledge Base Training', 'Omnichannel Deployment'],
-        image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&q=80&w=1000'
+        imageD: itChatbotD,
+        imageM: itChatbotM,
+        image: itChatbotD
     },
     {
         id: 'automation',
@@ -48,7 +58,9 @@ const itTabs = [
         title: 'Business Process Automation',
         description: 'Eliminate manual work and scale fast by automating complex multi-step workflows across your software stack.',
         features: ['Workflow Optimization', 'Zapier/Make Integrations', 'RPA (Robotic Process Automation)', 'Custom API Syncs'],
-        image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000'
+        imageD: itAutoD,
+        imageM: itAutoM,
+        image: itAutoD
     }
 ];
 
