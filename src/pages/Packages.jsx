@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { CheckCircle } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
+import { pageSEO, packagesFaqSchema, createBreadcrumbSchema } from '../seo/seoData';
 import '../styles/Packages.css';
 
 const Packages = () => {
     const [activeTab, setActiveTab] = useState('marketing');
 
+    const schemas = useMemo(() => [
+        packagesFaqSchema,
+        createBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Packages' },
+        ]),
+    ], []);
+
     return (
         <main className="packages-page">
+            <SEOHead {...pageSEO.packages} schemas={schemas} />
             <section className="page-header container">
                 <h1>Tailored Solutions for <span className="text-accent">Digital Excellence</span></h1>
                 <p>Transparent pricing designed to scale with your business. Choose the perfect package for your marketing or IT infrastructure needs.</p>

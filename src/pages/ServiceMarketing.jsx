@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import ServiceLayout from '../components/ServiceLayout';
+import SEOHead from '../components/SEOHead';
+import { pageSEO, marketingServiceSchema, createBreadcrumbSchema } from '../seo/seoData';
 import mktSocialD from '../assets/Services/Marketing/Social Media.png';
 import mktSocialM from '../assets/Services/Marketing/social media mobile.jpeg';
 import mktAdsD from '../assets/Services/Marketing/Google and Meta Ads D.jpeg';
@@ -77,12 +79,24 @@ const marketingTabs = [
 ];
 
 const ServiceMarketing = () => {
+    const schemas = useMemo(() => [
+        marketingServiceSchema,
+        createBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Services', url: '/services' },
+            { name: 'Marketing & Multimedia' },
+        ]),
+    ], []);
+
     return (
-        <ServiceLayout
-            title={<>Marketing & <span className="text-accent">Multimedia</span></>}
-            subtitle="Data-driven strategies meets creative excellence to scale your brand."
-            tabs={marketingTabs}
-        />
+        <>
+            <SEOHead {...pageSEO.serviceMarketing} schemas={schemas} />
+            <ServiceLayout
+                title={<>Marketing & <span className="text-accent">Multimedia</span></>}
+                subtitle="Data-driven strategies meets creative excellence to scale your brand."
+                tabs={marketingTabs}
+            />
+        </>
     );
 };
 

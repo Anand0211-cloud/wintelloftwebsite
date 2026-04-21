@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Megaphone, Server, ArrowRight } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
+import { pageSEO, createBreadcrumbSchema } from '../seo/seoData';
 import '../styles/Services.css';
 
 const Services = () => {
+    const schemas = useMemo(() => [
+        createBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Services' },
+        ]),
+    ], []);
+
     return (
         <main className="services-overview-page">
+            <SEOHead {...pageSEO.services} schemas={schemas} />
             <section className="page-header container">
                 <h1>Our <span className="text-accent">Services</span></h1>
                 <p>Comprehensive solutions for the digital age. Choose your path to growth.</p>

@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Instagram, Linkedin, ArrowRight, Sparkles, Users, Heart } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
+import { pageSEO, createBreadcrumbSchema } from '../seo/seoData';
 import '../styles/Careers.css';
 
 const Careers = () => {
+    const schemas = useMemo(() => [
+        createBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Careers' },
+        ]),
+    ], []);
+
     return (
         <main className="careers-page">
+            <SEOHead {...pageSEO.careers} schemas={schemas} />
             <section className="page-header container">
                 <h1>Join the <span className="text-accent">Intelloft</span> Team</h1>
                 <p>We're building the future of digital consultancy — and we want you to be part of it.</p>

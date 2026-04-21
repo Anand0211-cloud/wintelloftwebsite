@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
+import { pageSEO, localBusinessSchema, createBreadcrumbSchema } from '../seo/seoData';
 import '../styles/Contact.css';
 
 const Contact = () => {
@@ -9,6 +11,14 @@ const Contact = () => {
         service: '',
         message: ''
     });
+
+    const schemas = useMemo(() => [
+        localBusinessSchema,
+        createBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Contact' },
+        ]),
+    ], []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,6 +33,7 @@ const Contact = () => {
 
     return (
         <main className="contact-page">
+            <SEOHead {...pageSEO.contact} schemas={schemas} />
             <section className="contact-hero container">
                 <div className="contact-grid">
                     <div className="contact-info">

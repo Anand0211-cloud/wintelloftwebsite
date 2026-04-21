@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Zap, Shield, Users } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
+import { pageSEO, organizationSchema, createBreadcrumbSchema } from '../seo/seoData';
 import '../styles/About.css';
 
 const About = () => {
+    const schemas = useMemo(() => [
+        organizationSchema,
+        createBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'About' },
+        ]),
+    ], []);
+
     return (
         <main className="about-page">
+            <SEOHead {...pageSEO.about} schemas={schemas} />
             <section className="page-header container">
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}

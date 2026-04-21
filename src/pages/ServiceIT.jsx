@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import ServiceLayout from '../components/ServiceLayout';
+import SEOHead from '../components/SEOHead';
+import { pageSEO, itServiceSchema, createBreadcrumbSchema } from '../seo/seoData';
 import itECCD from '../assets/Services/IT/E commerce D.jpeg';
 import itECCM from '../assets/Services/IT/E commerce M.jpeg';
 import itChatbotD from '../assets/Services/IT/AI Chatbot D.jpeg';
@@ -65,12 +67,24 @@ const itTabs = [
 ];
 
 const ServiceIT = () => {
+    const schemas = useMemo(() => [
+        itServiceSchema,
+        createBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Services', url: '/services' },
+            { name: 'Information & Technology' },
+        ]),
+    ], []);
+
     return (
-        <ServiceLayout
-            title={<>Information & <span className="text-accent">Technology</span></>}
-            subtitle="Engineering the future of your business with scalable, secure solutions."
-            tabs={itTabs}
-        />
+        <>
+            <SEOHead {...pageSEO.serviceIT} schemas={schemas} />
+            <ServiceLayout
+                title={<>Information & <span className="text-accent">Technology</span></>}
+                subtitle="Engineering the future of your business with scalable, secure solutions."
+                tabs={itTabs}
+            />
+        </>
     );
 };
 

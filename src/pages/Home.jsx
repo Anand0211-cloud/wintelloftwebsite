@@ -1,8 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BarChart, Server, Zap, Shield, Users, Layers, ExternalLink, Mail, Phone, MapPin, Send } from 'lucide-react';
 import TrustedBy from '../components/TrustedBy';
+import SEOHead from '../components/SEOHead';
+import { pageSEO, organizationSchema, websiteSchema, createBreadcrumbSchema, packagesFaqSchema } from '../seo/seoData';
 import heroBg from '../assets/hero_bg.png';
 import officeImg from '../assets/office_meeting.png';
 import hairDaoImg from '../assets/hairdao_preview.png';
@@ -43,8 +45,16 @@ const StatItem = ({ number, label, suffix = "", delay = 0 }) => {
 };
 
 const Home = () => {
+    const schemas = useMemo(() => [
+        organizationSchema,
+        websiteSchema,
+        createBreadcrumbSchema([{ name: 'Home' }]),
+        packagesFaqSchema,
+    ], []);
+
     return (
         <div className="home-page">
+            <SEOHead {...pageSEO.home} schemas={schemas} />
             {/* Background with Generated Asset */}
             <div className="hero-background-img" style={{ backgroundImage: `url(${heroBg})` }}></div>
 

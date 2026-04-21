@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Shield } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
+import { pageSEO, createBreadcrumbSchema } from '../seo/seoData';
 import '../styles/Privacy.css';
 
 const Privacy = () => {
+    const schemas = useMemo(() => [
+        createBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Privacy Policy' },
+        ]),
+    ], []);
+
     return (
         <main className="privacy-page">
+            <SEOHead {...pageSEO.privacy} schemas={schemas} />
             <section className="page-header container">
                 <h1>Privacy <span className="text-accent">Policy</span></h1>
                 <p>Your privacy is important to us. This policy outlines how we collect, use, and protect your information.</p>

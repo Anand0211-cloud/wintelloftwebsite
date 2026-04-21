@@ -1,7 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, ChevronLeft, ChevronRight, ChevronUp, ChevronDown, Monitor, Camera, Zap, Code } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
+import { pageSEO, createBreadcrumbSchema } from '../seo/seoData';
 
 // Import IT Project Images
 import imgEcoNeoShield from '../assets/Images_websites/ECO_NEO_Shield.png';
@@ -257,12 +259,20 @@ const Portfolio = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const view = searchParams.get('tile') || 'main'; // using 'tile' as key per standard pattern
 
+    const schemas = useMemo(() => [
+        createBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Portfolio' },
+        ]),
+    ], []);
+
     const handleBack = () => {
         setSearchParams({});
     };
 
     return (
         <main className="portfolio-page-revamp">
+            <SEOHead {...pageSEO.portfolio} schemas={schemas} />
             <AnimatePresence mode="wait">
                 {view === 'main' && (
                     <motion.div
