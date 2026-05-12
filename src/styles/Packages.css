@@ -123,17 +123,19 @@
 /* ===== PACKAGES PAGE MOBILE OVERRIDES ===== */
 @media (max-width: 768px) {
     .pricing-tabs {
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        padding: 0 1rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.6rem;
+        margin-top: 2rem;
+        padding: 0;
     }
 
     .tab-btn {
-        padding: 0.65rem 1.25rem;
-        font-size: 0.9rem;
-        flex: 1;
-        min-width: 0;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.95rem;
+        width: 100%;
         text-align: center;
+        border-radius: 8px;
     }
 
     .pricing-grid {

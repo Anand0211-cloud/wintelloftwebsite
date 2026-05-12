@@ -23,6 +23,32 @@ function ScrollToTop() {
   return null;
 }
 
+// Layout wrapper that conditionally hides footer on portfolio sub-views
+function AppLayout({ theme, toggleTheme }) {
+  const { pathname, search } = useLocation();
+  // Hide footer when inside IT or Marketing portfolio sub-views
+  const isPortfolioSubView = pathname === '/portfolio' && search.includes('tile=');
+
+  return (
+    <div className="app">
+      <Header theme={theme} toggleTheme={toggleTheme} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/services/marketing" element={<ServiceMarketing />} />
+        <Route path="/services/it" element={<ServiceIT />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/packages" element={<Packages />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/privacy" element={<Privacy />} />
+      </Routes>
+      {!isPortfolioSubView && <Footer theme={theme} />}
+    </div>
+  );
+}
+
 function App() {
   const [theme, setTheme] = useState('dark');
 
@@ -37,22 +63,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="app">
-        <Header theme={theme} toggleTheme={toggleTheme} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/marketing" element={<ServiceMarketing />} />
-          <Route path="/services/it" element={<ServiceIT />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/packages" element={<Packages />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/privacy" element={<Privacy />} />
-        </Routes>
-        <Footer theme={theme} />
-      </div>
+      <AppLayout theme={theme} toggleTheme={toggleTheme} />
     </Router>
   );
 }

@@ -634,6 +634,24 @@
 }
 
 @media (max-width: 768px) {
+    /* Marketing Portfolio — iOS safe-area & overflow fixes */
+    .marketing-portfolio-container {
+        padding-top: 60px;
+        /* Tighter top offset for mobile */
+    }
+
+    .marketing-reels {
+        height: calc(100vh - 60px);
+        height: calc(100dvh - 60px);
+        /* dvh accounts for iOS Safari toolbar */
+    }
+
+    .snap-section {
+        height: calc(100vh - 60px);
+        height: calc(100dvh - 60px);
+        padding: 0;
+    }
+
     .reel-frame {
         width: 100%;
         height: 100%;
@@ -646,12 +664,25 @@
         /* Hide left names on mobile */
     }
 
-    .snap-section {
-        padding: 0;
+    .reel-content {
+        padding: 1.5rem 1.25rem calc(1.5rem + env(safe-area-inset-bottom, 0px)) 1.25rem;
+        /* Account for iOS safe area at bottom */
     }
 
     .reel-content h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .reel-content p {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+    }
+
+    .reel-number {
+        display: none;
+        /* Hide large watermark numbers on mobile to prevent overlap */
     }
 }
 
@@ -930,23 +961,6 @@
         height: 50px;
     }
 
-    .reel-number {
-        font-size: 12vh;
-        right: 5%;
-    }
-
-    .reel-content {
-        padding: 2rem 1.5rem 3rem 1.5rem;
-    }
-
-    .reel-content h2 {
-        font-size: 1.6rem;
-    }
-
-    .reel-content p {
-        font-size: 0.9rem;
-    }
-
     .back-btn {
         top: 1rem;
         left: 1rem;
@@ -964,6 +978,8 @@
 
     .it-carousel-wrapper {
         height: calc(100vh - 5rem);
+        height: calc(100dvh - 5rem);
+        /* dvh accounts for iOS Safari dynamic toolbar */
         overflow-x: hidden;
         overflow-y: auto;
         scroll-snap-type: y proximity;
